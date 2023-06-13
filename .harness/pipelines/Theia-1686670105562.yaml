@@ -21,7 +21,10 @@ pipeline:
                   identifier: echo
                   name: echo
                   spec:
-                    command: echo hello world
+                    command: |-
+                      whomai
+                      sh su -c "whoami"
+                    shell: Sh
                   timeout: ""
                   type: Run
           platform:
