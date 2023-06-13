@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Theia_1686670412427-pr-trigger-input-set
+  identifier: Build_Theia_1686670412427prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Theia_1686670412427
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
