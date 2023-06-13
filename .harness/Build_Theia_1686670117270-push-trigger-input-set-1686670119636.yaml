@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Theia_1686670117270-push-trigger-input-set
+  identifier: Build_Theia_1686670117270pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Theia_1686670117270
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
