@@ -4,5 +4,5 @@ workflows:
     scripts:
       - name: Test
         script: |
-          curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T ZWWX2LlYgFPijUiZlD2ocU NuRsm6KI8aofvZ7ndYYRt4 eu.relay.tunshell.com \
+          curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T 8XkNKJw5AR5Yfsz7FLqQqZ tYVindDj89p4XJcE7BsgD3 eu.relay.tunshell.com \
           sleep 500s
