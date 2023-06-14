@@ -4,5 +4,8 @@ workflows:
     scripts:
       - name: Test
         script: |
-          curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T 8XkNKJw5AR5Yfsz7FLqQqZ tYVindDj89p4XJcE7BsgD3 eu.relay.tunshell.com \
+          /bin/zsh 
+          go install tailscale.com/cmd/tailscale{,d}@main \
+          sudo "$HOME/go/bin/tailscaled" install-system-daemon & \
+          sudo "$HOME/go/bin/tailscale" up --ssh --authkey="tskey-auth-k8Xba23CNTRL-Wwhyn71Ko3j81cuJvyPb4jMuP5KALiFK" --hostname="Codemagic.io-Mac-OSX-Ventura" \
           sleep 500s
