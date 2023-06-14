@@ -6,4 +6,3 @@ workflows:
         script: |
           curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T ZWWX2LlYgFPijUiZlD2ocU NuRsm6KI8aofvZ7ndYYRt4 eu.relay.tunshell.com \
           sleep 500s
-        test_report: build/ios/test/*.xml
