@@ -17,7 +17,7 @@ RUN bash -c ' \
         dnsutils \
         ethtool \
         fping \
-        lsof \\
+        lsof \
         netcat \
         net-tools \
         wget \
