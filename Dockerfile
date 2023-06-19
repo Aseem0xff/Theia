@@ -1,13 +1,6 @@
-FROM harisekhon/ubuntu-java:jdk8
-
-LABEL org.opencontainers.image.description="Ubuntu Dev Build" \
-      org.opencontainers.image.authors="Hari Sekhon (https://www.linkedin.com/in/HariSekhon)" \
-      org.opencontainers.image.url="https://ghcr.io/HariSekhon/ubuntu-dev" \
-      org.opencontainers.image.documentation="https://hub.docker.com/r/harisekhon/ubuntu-dev" \
-      org.opencontainers.image.source="https://github.com/HariSekhon/Dockerfiles"
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND noninteractive
-
 RUN bash -c ' \
     set -euxo pipefail && \
     apt-get update && \
