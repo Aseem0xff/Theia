@@ -21,9 +21,7 @@ pipeline:
                   identifier: echo
                   name: echo
                   spec:
-                    command: |-
-                      whomai
-                      sh su -c "whoami"
+                    command: whomai
                     shell: Sh
                   timeout: ""
                   type: Run
